@@ -1,0 +1,42 @@
+<html> 
+<head> 
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--Loading Facebook SDK -->
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js">
+</script>
+<!--Facebook Login --> 
+<script type="text/javascript">
+	fblogin=function(success,fail){
+		FB.login(function(response) {
+		if (response.session){
+			if(response.perms){
+				if(success!=null){
+					success();
+				}
+			}
+			else {
+				if (fail!=null){
+					fail();
+				}
+			}
+			else {
+				fail();
+			}
+			},
+		{perms:'read_stream,publish_stream,offline_access,user_photos'}
+}
+);
+};
+</script>
+</head>
+<body>
+	<script>
+		FB.init({
+			appId	: '{{FB_APP_ID}}',
+			status	: true,
+			cookie	: true,
+			xfbml	: true
+			});
+	</script>
+</body>
