@@ -6,7 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'WoUSO_Facebook.view.index', name='home'),
+    url(r'^$', 'view.index', name='home'),
     # url(r'^WoUSO_Facebook/', include('WoUSO_Facebook.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
